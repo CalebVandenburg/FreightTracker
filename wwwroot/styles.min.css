@@ -1,0 +1,1 @@
+﻿body{background-image:linear-gradient(to bottom,lightgray,gray);}body .trucksContainer{display:flex;justify-content:space-between;margin-left:-5px;margin-right:-5px;}body .trucksContainer .truckContainer{padding:10px;border-radius:5px;border:1px solid #808080;width:33.33%;margin:5px;}

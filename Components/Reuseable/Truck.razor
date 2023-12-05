@@ -1,0 +1,22 @@
+﻿<div class="truckContainer">
+    <h3>Truck @icon</h3>
+    <div class="truckDetail">
+        <ul>
+            <li>@TruckModel.ID</li>
+            <li>@TruckModel.Name</li>
+            <li>@TruckModel.Description</li>
+        </ul>
+    </div>
+</div>
+@code {
+    [Parameter]
+    public Models.TruckModel TruckModel { get; set; }
+    public MarkupString icon = (MarkupString)"<i class='bi bi-truck'></i>";
+    protected override async Task OnInitializedAsync()
+    {
+        if (TruckModel.TruckType == Models.TruckType.Flatbed)
+        {
+            icon = (MarkupString)"<i class='bi bi-truck-flatbed'></i>";
+        }
+    }
+}

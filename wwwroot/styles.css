@@ -1,0 +1,17 @@
+﻿body {
+  background-image: linear-gradient(to bottom, lightgray, gray);
+}
+body .trucksContainer {
+  display: flex;
+  justify-content: flex-start;
+  margin-left: -5px;
+  margin-right: -5px;
+  flex-wrap: wrap;
+}
+body .trucksContainer .truckContainer {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid grey;
+  width: calc(33.33% - 10px);
+  margin: 5px;
+}

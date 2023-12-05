@@ -1,0 +1,16 @@
+﻿@page "/trucks"
+@using FreightTracker.Database
+@using FreightTracker.Models
+@using FreightTracker.Components.Reuseable
+<PageTitle>Trucks</PageTitle>
+<button type="button" @onclick="() => AddTruckModel()">Add Truck</button>
+<div class="trucksContainer">
+
+    @foreach (var truck in TruckModels)
+    {
+        <Truck TruckModel="truck"></Truck>
+    }
+</div>
+@code {
+    
+}
