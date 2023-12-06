@@ -1,0 +1,19 @@
+﻿@page "/truck/{ID:int}"
+@using FreightTracker.Database
+@using FreightTracker.Models
+@using FreightTracker.Components.Reuseable
+<PageTitle>Truck</PageTitle>
+@if(TruckModel != null && TruckModel.ID >= 1)
+{
+    <div class="truckDetailContainer">
+        <h3>Truck @ID</h3>
+        <div class="truckDetail">
+            <form method="post" Model="@TruckModel" @onsubmit="() => FormSubmitted()">
+                <AntiforgeryToken />
+                <span>Name: <InputText @bind-Value="TruckModel.Name" id="Name"/></span>
+                <span>Description: <InputText @bind-Value="TruckModel.Description" id="Description" /></span>
+                <input type="submit" class="btn btn-primary" value="Save" />
+            </form>
+        </div>
+    </div>
+}

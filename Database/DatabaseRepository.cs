@@ -17,5 +17,20 @@ namespace FreightTracker.Database
             databaseContext.ChangeTracker.Clear();
             return trucks;
         }
+        public async Task<TruckModel> GetTruckByID(int ID)
+        {
+            var truck = await databaseContext.TruckModels.Where(x=>x.ID == ID).FirstOrDefaultAsync();
+            databaseContext.ChangeTracker.Clear();
+            return truck;
+        }
+        public async Task<TruckModel> UpdateTruck(TruckModel editedTruck)
+        {
+            var truck = await databaseContext.TruckModels.Where(x => x.ID == editedTruck.ID).FirstOrDefaultAsync();
+            truck.Name = editedTruck.Name;
+            truck.Description = editedTruck.Description;
+            await databaseContext.SaveChangesAsync();
+            databaseContext.ChangeTracker.Clear();
+            return truck;
+        }
     }
 }
